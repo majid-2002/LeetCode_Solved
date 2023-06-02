@@ -3,11 +3,11 @@ function mergeSort(arr) {
     return arr;
   }
 
-  const middleIndex = Math.floor(arr.length / 2);
-  const leftArr = arr.slice(0, middleIndex);
-  const rightArr = arr.slice(middleIndex);
+  const middleIndex = Math.floor(arr.length / 2); //? find the middle index of the array using Math.floor to round down to the nearest whole number
+  const leftArr = arr.slice(0, middleIndex); //? slice the array from the 0 index to the middle index
+  const rightArr = arr.slice(middleIndex); //? slice the array from the middle index to the end of the array
 
-  return merge(mergeSort(leftArr), mergeSort(rightArr));
+  return merge(mergeSort(leftArr), mergeSort(rightArr)); //? recursively call mergeSort on the left and right arrays and then call merge on the results
 }
 
 function merge(leftArr, rightArr) {
@@ -33,3 +33,17 @@ function merge(leftArr, rightArr) {
 let arr = [12, 3, 16, 6, 5, 1];
 
 console.log(mergeSort(arr));
+
+
+
+//              [12, 3, 16, 6, 5, 1]
+//                /               \
+//      [12, 3, 16]            [6, 5, 1] // leftArr and rightArr
+//       /      \                /    \
+//    [12]    [3, 16]          [6]   [5, 1]
+//           /   \                  /    \
+//         [3]   [16]             [5]   [1] 
+//          \     /                \     /
+//          [3, 16]                [1, 5] // merge([5], [1]) = [1, 5] 
+//              \                    /
+//               [1, 3, 5, 6, 12, 16]
