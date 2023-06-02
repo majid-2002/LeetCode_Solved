@@ -47,3 +47,5 @@ console.log(mergeSort(arr));
 //          [3, 16]                [1, 5] // merge([5], [1]) = [1, 5] 
 //              \                    /
 //               [1, 3, 5, 6, 12, 16]
+
+//? Time Complexity: O(n log n)
