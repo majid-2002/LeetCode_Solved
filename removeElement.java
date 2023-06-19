@@ -1,5 +1,5 @@
 public class removeElement {
-    public static int removeElement(int[] nums, int val) {
+    public static int removeelement(int[] nums, int val) {
         int k = 0;
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != val)
@@ -13,12 +13,11 @@ public class removeElement {
         int[] nums = { 0, 1, 2, 2, 3, 4 };
         int val = 2;
 
-        int res = removeElement(nums, val);
+        int res = removeelement(nums, val);
         System.out.println(res);
 
     }
 }
-
 
 // 0, 1, 2, 2, 3, 4
 
